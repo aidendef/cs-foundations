@@ -13,21 +13,6 @@ AI와 함께 앱·게임을 만드는 사람이 알아야 할 컴퓨터 과학 �
 - [코딩 기초](https://aidendef.github.io/cs-foundations/chapters/code.html)
 - [수학 기초](https://aidendef.github.io/cs-foundations/chapters/math.html)
 
-## 로컬에서 HTML로 보기
-
-저장소 폴더에서 아래 명령을 실행한 뒤 브라우저로 접속하세요. 생성된 HTML이 포함되어 있어 먼저 빌드할 필요는 없습니다.
-
-```bash
-python3 -m http.server 8000 --bind 127.0.0.1
-```
-
-| 페이지 | 브라우저 주소 | HTML 파일 |
-|---|---|---|
-| 첫 화면·전체 목차 | [첫 화면 열기](http://127.0.0.1:8000/index.html) | [index.html](index.html) |
-| 0장부터 시작 | [0장 열기](http://127.0.0.1:8000/chapters/ch00.html) | [chapters/ch00.html](chapters/ch00.html) |
-
-브라우저 주소는 위 서버를 실행한 컴퓨터에서만 열립니다. GitHub의 HTML 파일 링크는 소스 확인용입니다. 서버를 종료하려면 터미널에서 `Ctrl+C`를 누르세요.
-
 ## 교육 구성
 
 | 부 | 장 |
@@ -46,15 +31,3 @@ python3 -m http.server 8000 --bind 127.0.0.1
 ## 이용 조건과 사진 출처
 
 자료의 이용 조건은 [LICENSE](LICENSE), 사진별 출처와 이용 조건은 [사진 출처](assets/photo/README.md)를 참고하세요.
-
-## 빌드
-
-```bash
-python3 src/build.py
-```
-
-원고는 `src/content/`, 그림은 `src/fig/`에 있습니다. `pandoc`과 Python 3(`beautifulsoup4`)가 필요합니다.
-
-## 웹 배포
-
-GitHub Pages는 `main` 브랜치의 루트(`/`)에 있는 HTML을 배포합니다. 원고를 수정한 경우 `python3 src/build.py`로 HTML을 갱신한 뒤 생성 파일을 함께 커밋하고 푸시하세요. `main`에 푸시하면 사이트가 자동으로 갱신됩니다.
