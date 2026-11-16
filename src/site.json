@@ -2,13 +2,13 @@
   "guides": [
     {
       "id": "code",
-      "label": "초코딩 기초",
+      "label": "코딩 기초",
       "title": "코드 읽는 법",
       "sym": "{}"
     },
     {
       "id": "math",
-      "label": "초수학 기초",
+      "label": "수학 기초",
       "title": "수학 길잡이",
       "sym": "∑"
     }
