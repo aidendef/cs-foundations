@@ -1,10 +1,8 @@
 # 개발의 기초
 
-> 사랑하는 아들을 위해 만들었습니다.
-
 AI와 함께 앱·게임을 만드는 사람이 알아야 할 컴퓨터 과학 기초
 
-**https://jedikim.github.io/cs-foundations/**
+고객 교육용 자료입니다.
 
 | 부 | 장 |
 |---|---|
@@ -19,19 +17,9 @@ AI와 함께 앱·게임을 만드는 사람이 알아야 할 컴퓨터 과학 �
 | 7부 AI | 26 AI 계산을 따라가는 수학 · 27 LLM의 작동과 한계 · 28 핵심 AI 논문 15편 · 29 AI 기능과 개발 에이전트 |
 | 8부 AI와 함께 만들기 | 30 AI에게 일 시키는 법 · 31 작은 웹 앱 하나를 끝까지 |
 
-## 만든 사람들
+## 이용 조건과 사진 출처
 
-| | |
-|---|---|
-| 초안 | Jedi Kim |
-| 수정 | Codex |
-| 감수 및 퍼블리싱 | Claude |
-
-Jedi Kim — [LinkedIn](https://www.linkedin.com/in/jedikim/) · [jedikim.com](https://jedikim.com)
-
-## 저작권
-
-[CC0 1.0](LICENSE). 누구나 자유롭게 복사하고, 고치고, 배포할 수 있습니다. `assets/photo/`의 사진은 [각 사진의 라이선스](assets/photo/README.md)를 따릅니다.
+자료의 이용 조건은 [LICENSE](LICENSE), 사진별 출처와 이용 조건은 [사진 출처](assets/photo/README.md)를 참고하세요.
 
 ## 빌드
 

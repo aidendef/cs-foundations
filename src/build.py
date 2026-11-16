@@ -343,18 +343,8 @@ def sidebar(active, root):
 <button class="side-search search-open" type="button">{icon("i-search").replace("<svg", '<svg width="16" height="16"')}검색<kbd>/</kbd></button>
 <div class="side-progress"><span>0장 읽음</span><div class="bar"><i></i></div></div>
 <nav><ol class="side-top">{guide_items}</ol>{"".join(parts)}</nav>
-<div class="side-links"><a href="{root}index.html"{home_cur}>전체 지도</a>{trouble_link}<a href="{root}chapters/glossary.html"{cur_of("glossary")}>용어 사전</a><a href="{root}chapters/credits.html"{cur_of("credits")}>만든 사람들</a><a href="{SITE["repo"]}" target="_blank" rel="noopener">GitHub 저장소 ↗</a></div>
+<div class="side-links"><a href="{root}index.html"{home_cur}>전체 지도</a>{trouble_link}<a href="{root}chapters/glossary.html"{cur_of("glossary")}>용어 사전</a><a href="{root}chapters/credits.html"{cur_of("credits")}>사진 출처</a></div>
 </aside>'''
-
-
-def site_footer(root):
-    roles = ' · '.join(f'{esc(r)} <b>{esc(w)}</b>' for r, w in SITE['roles'])
-    links = ''.join(f'<a href="{esc(u)}" target="_blank" rel="noopener">{esc(n)}</a>' for n, u in SITE['links'])
-    lic = SITE['license']
-    return (f'<footer class="site-foot"><p class="dedication">{esc(SITE["dedication"])}</p>'
-            f'<p>{roles}</p>'
-            f'<p class="foot-links"><a href="{esc(SITE["repo"])}" target="_blank" rel="noopener">GitHub</a>{links}'
-            f'<a href="{esc(lic["url"])}" target="_blank" rel="noopener license">{esc(lic["name"])}</a></p></footer>')
 
 
 def page(title, body, page_id, root, crumb, toc=None, desc=''):
@@ -369,8 +359,6 @@ def page(title, body, page_id, root, crumb, toc=None, desc=''):
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>{esc(title)}</title>
 <meta name="description" content="{esc(desc)}">
-<meta name="author" content="{esc(SITE["author"])}">
-<link rel="license" href="{esc(SITE["license"]["url"])}">
 <script>try{{var t=JSON.parse(localStorage.getItem('csf-theme')||'""');if(t)document.documentElement.setAttribute('data-theme',t)}}catch(e){{}}</script>
 <link rel="stylesheet" href="{root}assets/site.css">
 </head>
@@ -389,7 +377,6 @@ def page(title, body, page_id, root, crumb, toc=None, desc=''):
 <main id="main" class="layout{' has-toc' if toc else ''}">
 <article>
 {body}
-{site_footer(root)}
 </article>
 {toc_html}
 </main>
@@ -543,12 +530,10 @@ def credits_page():
         rows.append(f'<tr><td><img src="../assets/photo/{esc(name)}" alt="" loading="lazy" style="width:120px;border-radius:8px;display:block"></td>'
                     f'<td>{esc(m.get("title", name))}</td><td>{esc(m.get("author", ""))}</td><td>{esc(m.get("license", ""))}</td>'
                     f'<td><a href="{esc(m.get("source", ""))}" target="_blank" rel="noopener">원본</a></td></tr>')
-    extra_p = SRC / 'content' / 'credits.md'
-    extra = render_chapter_body('credits', extra_p.read_text(encoding='utf-8'))[0] if extra_p.exists() else ''
     table = ('<div class="table-wrap"><table><thead><tr><th>사진</th><th>제목</th><th>저작자</th><th>라이선스</th><th>출처</th></tr></thead><tbody>'
              + ''.join(rows) + '</tbody></table></div>') if rows else ''
-    body = f'<header class="ch-head"><h1>만든 사람들</h1></header>{extra}{table}'
-    (OUT_CH / 'credits.html').write_text(page(f'만든 사람들 — {CUR["title"]}', body, 'credits', '../', '<b>만든 사람들</b>'), encoding='utf-8')
+    body = f'<header class="ch-head"><h1>사진 출처</h1></header>{table}'
+    (OUT_CH / 'credits.html').write_text(page(f'사진 출처 — {CUR["title"]}', body, 'credits', '../', '<b>사진 출처</b>'), encoding='utf-8')
 
 
 def main():

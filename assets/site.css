@@ -289,14 +289,6 @@ svg .ic.blue{color:var(--blue);--ic-fill:var(--blue-soft)}svg .ic.green{color:va
 .pager b{font-size:16px;letter-spacing:-.02em}
 .pager .next{text-align:right}
 
-.site-foot{margin-top:56px;border-top:1px solid var(--line);padding-top:22px;font-size:13.500px;line-height:1.7;color:var(--muted);text-align:center}
-.site-foot p{margin:4px 0}
-.site-foot b{color:var(--ink-2);font-weight:650}
-.site-foot a{color:var(--ink-2)}
-.site-foot .foot-links a{margin:0 8px}
-.dedication{font-size:15.500px;color:var(--ink-2);font-style:italic;letter-spacing:-.01em}
-.hero .dedication{margin:0 0 14px;font-size:17px;color:var(--warm)}
-.site-foot .dedication{margin-bottom:8px}
 /* ── 표지(목차) ─────────────────────────── */
 .hero{padding:10px 0 6px}
 .hero h1{font-size:clamp(36px,6vw,54px)}
